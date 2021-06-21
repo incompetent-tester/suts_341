@@ -1,0 +1,24 @@
+﻿
+<div>
+    <h3>ProductCard</h3>
+    <img />
+    <p>
+        Name : P1
+    </p>
+    <p>
+        Price : RM10.00
+    </p>
+
+    @if(canDelete)
+    { 
+        <button>Delete</button>
+    }
+</div>
+
+
+
+@code {
+    [Parameter]
+    public bool canDelete { get; set; }
+
+}

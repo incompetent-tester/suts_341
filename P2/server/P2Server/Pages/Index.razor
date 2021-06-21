@@ -1,0 +1,21 @@
+﻿@page "/"
+@inject IDatabase IDatabase
+
+<h1>P2</h1>
+
+You are required to develop this application
+
+<h3>Products</h3>
+@for (var i = 0; i < product.Count; i++)
+{
+    <ProductCard></ProductCard>
+}
+
+@code { 
+    List<Product> product;
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = IDatabase.Get();
+    }
+}

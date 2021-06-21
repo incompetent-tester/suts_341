@@ -1,0 +1,27 @@
+﻿@page "/"
+@namespace P6Client.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P6Client</title>
+    <base href="~/" />
+
+
+    <link href="css/site.css" rel="stylesheet" />
+
+    <link href="P6Client.styles.css" rel="stylesheet" />
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

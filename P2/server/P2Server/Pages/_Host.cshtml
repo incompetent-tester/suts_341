@@ -1,0 +1,29 @@
+﻿@page "/"
+@namespace P2Server.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P2Server</title>
+    <base href="~/" />
+
+    <!-- Add you css styling or javascript here -->
+    <link href="css/site.css" rel="stylesheet" />
+
+    <!-- This css is generated automatically by dotnet if there are Blazor CSS isolation DO NOT REMOVE -->
+    <link href="P2Server.styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Placeholder for blazor application DO NOT REMOVE-->
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+    <!-- Automatically generated javascript included here DO NOT REMOVE -->
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

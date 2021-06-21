@@ -1,0 +1,48 @@
+﻿@page "/product"
+@inject KafkaProducer producer
+@inject ReactiveCollections rc
+@implements IDisposable
+
+<h3>Product</h3>
+
+<p>We shall receive kafka raw messages here</p>
+
+@foreach (var m in messages)
+{
+    <span>@m</span><br/>
+}
+
+
+
+<button @onclick="Click">Test Producer</button>
+
+
+@code {
+    List<String> messages = new List<String>();
+    IDisposable subscription;
+
+    override protected void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (firstRender)
+        {
+            subscription = rc.subjects.Subscribe((value) =>
+            {
+                messages.Add(value);
+                InvokeAsync(StateHasChanged);
+            });
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        subscription?.Dispose();
+    }
+
+    void Click()
+    {
+        var rand = new Random();
+        producer.Send("quickstart-events", rand.Next().ToString());
+    }
+}

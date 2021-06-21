@@ -1,0 +1,15 @@
+﻿@page "/product"
+@inject HttpClient Http
+
+<h3>Products</h3>
+
+@code {
+    private Product[] products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        base.OnInitializedAsync();
+
+        products = await Http.GetFromJsonAsync<Product[]>("api/product/");
+    }
+}
