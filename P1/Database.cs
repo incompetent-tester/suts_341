@@ -50,17 +50,37 @@ namespace P1
         public static void addProduct(this SqliteConnection conn, Product product) {
             SqliteCommand command;
             command = conn.CreateCommand();
-            command.CommandText = $"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ('{product.name}', '{product.description}', '{product.colour}', {product.price});";
+            command.CommandText = @"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ($name, $desc, $colour, $price);";
+            command.Parameters.AddWithValue("$name",product.name);
+            command.Parameters.AddWithValue("$desc",product.description);
+            command.Parameters.AddWithValue("$colour",product.colour);
+            command.Parameters.AddWithValue("$price",product.price);
             command.ExecuteNonQuery();
+            // SqliteCommand command;
+            // command = conn.CreateCommand();
+            // command.CommandText = $"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ('{product.name}', '{product.description}', '{product.colour}', {product.price});";
+            // command.ExecuteNonQuery();
         }
         public static void InsertProducts(this SqliteConnection conn, IEnumerable<Product> products) {
+            
             foreach(var product in products)
             {
                 SqliteCommand command;
                 command = conn.CreateCommand();
-                command.CommandText = $"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ('{product.name}', '{product.description}', '{product.colour}', {product.price});";
+                command.CommandText = @"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ($name, $desc, $colour, $price);";
+                command.Parameters.AddWithValue("$name",product.name);
+                command.Parameters.AddWithValue("$desc",product.description);
+                command.Parameters.AddWithValue("$colour",product.colour);
+                command.Parameters.AddWithValue("$price",product.price);
                 command.ExecuteNonQuery();
             }
+            // foreach(var product in products)
+            // {
+            //     SqliteCommand command;
+            //     command = conn.CreateCommand();
+            //     command.CommandText = $"INSERT INTO SampleTable(Name, Description, Colour, Price) VALUES ('{product.name}', '{product.description}', '{product.colour}', {product.price});";
+            //     command.ExecuteNonQuery();
+            // }
             
 
         }
@@ -92,10 +112,19 @@ namespace P1
         public static void deleteProduct(this SqliteConnection conn, Product product) {
             SqliteCommand command;
             command = conn.CreateCommand();
-            command.CommandText = $"DELETE FROM SampleTable WHERE (Name='{product.name}' AND Description='{product.description}' AND Colour='{product.colour}' AND Price={product.price})";
+            command.CommandText = @"DELETE FROM SampleTable WHERE (Name=$name AND Description=$desc AND Colour=$colour AND Price=$price)";
+            command.Parameters.AddWithValue("$name",product.name);
+            command.Parameters.AddWithValue("$desc",product.description);
+            command.Parameters.AddWithValue("$colour",product.colour);
+            command.Parameters.AddWithValue("$price",product.price);
             command.ExecuteNonQuery();
+            // SqliteCommand command;
+            // command = conn.CreateCommand();
+            // command.CommandText = $"DELETE FROM SampleTable WHERE (Name='{product.name}' AND Description='{product.description}' AND Colour='{product.colour}' AND Price={product.price})";
+            // command.ExecuteNonQuery();
         }
         public static void deleteTable(this SqliteConnection conn,string tableName) { 
+            
             SqliteCommand command;
             command = conn.CreateCommand();
             command.CommandText = $"DROP Table '{tableName}'";
