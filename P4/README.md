@@ -23,7 +23,7 @@ mysqld --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0-2\my.ini" --standa
 
 
 5. Execute on Instance 1:
-<br/
+<br/>
 <pre>
 create user 'replicator'@'%' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
 
