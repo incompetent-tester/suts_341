@@ -51,9 +51,9 @@ start replica;
 1. Execute multiple instances as replication set
 
 <pre>
-mongod --dbpath="./" --replSet rs0 --port 27017 # Instance 1
+mongod --dbpath="./dbfolder1" --replSet rs0 --port 27017 # Instance 1
 
-mongod --dbpath="./" --replSet rs0 --port 27018 # Instance 2
+mongod --dbpath="./dbfolder2" --replSet rs0 --port 27018 # Instance 2
 </pre>
 
 2. Initiate replication
