@@ -1,9 +1,13 @@
 <pre><i>Windows Specific Instructions </i></pre>
 
 <h1> Mysql Running Multiple Instances </h1>
+
 1. Look into the server1 + server2 folder.
+
 2. To regenerate database run the "init_data.bat". 
+
 3. Modify "my.ini". Ensure the listening port differs from the original. Ensure points to the correct directory.
+
 4. Run multiple instance of mysql with command 
 
 <i>Instance 1:</i>
