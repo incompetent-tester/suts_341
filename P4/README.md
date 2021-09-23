@@ -17,7 +17,7 @@ mysqld --defaults-file="C:\database\server1\my.ini" --standalone --console
 <br/>
 <i>Instance 2:</i>
 <code>
-mysqld --defaults-file="C:\database\server1\my.ini" --standalone --console
+mysqld --defaults-file="C:\database\server2\my.ini" --standalone --console
 </code>
 <br/>
 
