@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Reactive;
 using System.Reactive.Subjects;
 
-namespace P6Client.Data
+namespace P7Client.Data
 {
     public class ReactiveCollections
     {

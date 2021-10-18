@@ -3,9 +3,9 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using P6Client.Data;
+using P7Client.Data;
 
-namespace P6Client.Misc
+namespace P7Client.Misc
 {
     public class KafkaConsumer : IHostedService
     {

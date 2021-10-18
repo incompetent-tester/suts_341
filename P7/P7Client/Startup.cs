@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using P6Client.Misc;
-using P6Client.Data;
+using P7Client.Misc;
+using P7Client.Data;
 
-namespace P6Client
+namespace P7Client
 {
     public class Startup
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Confluent.Kafka;
 
-namespace P6Client.Misc
+namespace P7Client.Misc
 {
     public class KafkaProducer
     {
